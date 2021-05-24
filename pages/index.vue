@@ -141,10 +141,13 @@
         const bnrList = slider.querySelector('.list_bnr');
         const bnr = bnrList.querySelectorAll('li');
         const idxBtns = slider.querySelectorAll('.list_idx button');
+        const clickedBtn = null;
+        const clickedBtnIdx = 0;
 
-        const clickedBtn = path.forEach((el) => {
+        path.forEach((el, idx) => {
           if(el?.classList?.contains('on')) { 
-            return el;
+            clickedBtn = el;
+            clickedBtnIdx = idx;
           }
         });
 
@@ -156,6 +159,7 @@
         // console.log(path);
         // console.log(clickedBtn);
         console.log(idxBtns);
+        console.log(clickedBtn, clickedBtnIdx);
         // console.log(idxBtns.indexOf(clickedBtn));
 
         // bnrList.animate({'margin-left': -(slider.width * idxButtons.indexOf(idxBtns), 500)});
