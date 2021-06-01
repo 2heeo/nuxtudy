@@ -1,13 +1,16 @@
 <template>
-  <v-container>
-    <div>
-      main
-    </div>
-  </v-container>
+  <div>
+    notice
+  </div>
 </template>
 
 <script>
   export default {
+    head() {
+    return {
+        title: 'Notice'
+      }
+    },
     data() {
       return {
         name: 'Nuxt.js',
