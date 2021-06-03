@@ -4,22 +4,22 @@
       <!-- <image-slider> -->
         <transition-group name="fade" tag="div" class="slide">
           <div v-for="number in [currentIdx]" :key="number" transition="fade">
-            <!-- <div class="slide" :style="{background: `url(${require(slideItems[currentIdx % slideItems.length])}) no-repeat 50% 50% / cover`}"
+            <div class="slide" :style="{backgroundImage: 'url(' + require('~/assets/img/main/' + slideItems[currentIdx % slideItems.length].img) + ')'}"
               @mouseover="stopRataion"
               @mouseout="startRotation">
               <strong class="screen-out">{{slideItems[currentIdx % slideItems.length].desc}}</strong>
-            </div> -->
+            </div>
           </div>
         </transition-group>
       <!-- </image-slider> -->
-      <p>
+      <div>
         <v-btn class="btn-prev" v-ripple="false" icon @click="prev">
-          <v-icon x-large color="rgba(0,0,0,0.2)">mdi-arrow-left-circle-outline</v-icon>
+          <v-icon x-large color="rgba(255,255,255,0.2)">mdi-arrow-left-circle-outline</v-icon>
         </v-btn>
         <v-btn class="btn-next" v-ripple="false" icon @click="next">
-          <v-icon x-large color="rgba(0,0,0,0.2)">mdi-arrow-right-circle-outline</v-icon>
+          <v-icon x-large color="rgba(255,255,255,0.2)">mdi-arrow-right-circle-outline</v-icon>
         </v-btn>
-      </p>
+      </div>
     </div>
   </div>
 </template>
@@ -31,11 +31,11 @@
         slideItems: [
           {
             desc: '마마미니 더치베이비',
-            img: '~/assets/img/main/bnr_main.png'
+            img: 'bnr_main.png'
           },
           {
             desc: '마마미니 크로플',
-            img: '~/assets/img/main/bnr_main_v2.png'
+            img: 'bnr_main_v2.png'
           }
         ],
         currentIdx: 0,
@@ -47,7 +47,7 @@
     },
     methods: {
       startRotation() {
-        this.timer = setInterval(() => this.next(), 3000);
+        this.timer = setInterval(() => this.next(), 2000);
       },
       stopRataion() {
         clearTimeout(this.timer);

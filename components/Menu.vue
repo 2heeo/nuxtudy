@@ -1,17 +1,17 @@
 <template>
   <div class="list-menu">
-    
+    <h2 class="main-tit">Tip</h2>
     <v-row no-gutters justify="space-around">
       <v-col cols="3" class="d-flex justify-space-around">
         <v-card
-          v-for="(menu, idx) in menuItems" :key="idx" class="ma-2">
+          v-for="(menu, idx) in menuItems" :key="idx" class="ma-3">
           <v-img
             src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-            height="200px"
+            height="300px"
           ></v-img>
 
-          <v-card-title>{{menu.tit}}</v-card-title>
-          <v-card-subtitle>{{menu.desc}}</v-card-subtitle>    
+          <v-card-title v-if="menu.tit !== ''">{{menu.tit}}</v-card-title>
+          <v-card-subtitle v-if="menu.desc !== ''">{{menu.desc}}</v-card-subtitle>    
         </v-card>
       </v-col>
     </v-row>

@@ -1,6 +1,6 @@
 <template>
   <div class="image-link">
-    <h2>{{bnrTit}}</h2>
+    <h2 class="main-tit">{{bnrTit}}</h2>
     <v-btn class="btn-link" nuxt to="/reserve" color="green white--text">자세히 알아보기</v-btn>
   </div>
 </template>
